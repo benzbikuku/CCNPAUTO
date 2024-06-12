@@ -1,0 +1,26 @@
+
+CSR1000#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR1000(config)#
+CSR1000(config)#interface loopback1001
+CSR1000(config-if)#
+CSR1000(config-if)#ip address 10.1.1.100 255.255.255.0
+CSR1000(config-if)#
+CSR1000(config-if)#no shutdown
+CSR1000(config-if)#
+CSR1000(config-if)#end
+CSR1000#
+CSR1000#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR1000(config)#
+CSR1000(config)#interface loopback1002
+CSR1000(config-if)#
+CSR1000(config-if)#ip address 20.1.1.100 255.255.255.0
+CSR1000(config-if)#
+CSR1000(config-if)#no shutdown
+CSR1000(config-if)#
+CSR1000(config-if)#end
+CSR1000#
+CSR1000#
+CSR1000#
+CSR1000#

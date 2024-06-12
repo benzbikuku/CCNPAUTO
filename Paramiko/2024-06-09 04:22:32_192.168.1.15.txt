@@ -1,0 +1,43 @@
+
+CSR1000#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR1000(config)#binterface loopback1001
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#bip address 10.1.1.100 255.255.255.0
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#bno shutdown
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#bend
+                  ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#bconfig t
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#binterface loopback1002
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#bip address 20.1.1.100 255.255.255.0
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#bno shutdown
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#bend
+                  ^
+% Invalid input detected at '^' marker.
+
+CSR1000(config)#b
+% Incomplete command.
+
+CSR1000(config)#b

@@ -1,0 +1,41 @@
+DEB [20240607-23:46:42.988] thr=1   paramiko.transport: starting thread (client mode): 0x6cd59d50
+DEB [20240607-23:46:42.989] thr=1   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.12.0
+DEB [20240607-23:46:42.990] thr=1   paramiko.transport: Remote version/idstring: SSH-1.99-Cisco-1.25
+INF [20240607-23:46:42.990] thr=1   paramiko.transport: Connected (version 1.99, client Cisco-1.25)
+DEB [20240607-23:46:42.992] thr=1   paramiko.transport: === Key exchange possibilities ===
+DEB [20240607-23:46:42.992] thr=1   paramiko.transport: kex algos: diffie-hellman-group-exchange-sha1, diffie-hellman-group14-sha1
+DEB [20240607-23:46:42.993] thr=1   paramiko.transport: server key: ssh-rsa
+DEB [20240607-23:46:42.993] thr=1   paramiko.transport: client encrypt: aes128-ctr, aes192-ctr, aes256-ctr, aes128-cbc, 3des-cbc, aes192-cbc, aes256-cbc
+DEB [20240607-23:46:42.993] thr=1   paramiko.transport: server encrypt: aes128-ctr, aes192-ctr, aes256-ctr, aes128-cbc, 3des-cbc, aes192-cbc, aes256-cbc
+DEB [20240607-23:46:42.994] thr=1   paramiko.transport: client mac: hmac-sha1, hmac-sha1-96
+DEB [20240607-23:46:42.994] thr=1   paramiko.transport: server mac: hmac-sha1, hmac-sha1-96
+DEB [20240607-23:46:42.995] thr=1   paramiko.transport: client compress: none
+DEB [20240607-23:46:42.995] thr=1   paramiko.transport: server compress: none
+DEB [20240607-23:46:42.995] thr=1   paramiko.transport: client lang: <none>
+DEB [20240607-23:46:42.996] thr=1   paramiko.transport: server lang: <none>
+DEB [20240607-23:46:42.996] thr=1   paramiko.transport: kex follows: False
+DEB [20240607-23:46:42.996] thr=1   paramiko.transport: === Key exchange agreements ===
+DEB [20240607-23:46:42.997] thr=1   paramiko.transport: Kex: diffie-hellman-group-exchange-sha1
+DEB [20240607-23:46:42.997] thr=1   paramiko.transport: HostKey: ssh-rsa
+DEB [20240607-23:46:42.998] thr=1   paramiko.transport: Cipher: aes128-ctr
+DEB [20240607-23:46:42.998] thr=1   paramiko.transport: MAC: hmac-sha1
+DEB [20240607-23:46:42.998] thr=1   paramiko.transport: Compression: none
+DEB [20240607-23:46:42.999] thr=1   paramiko.transport: === End of kex handshake ===
+DEB [20240607-23:46:43.196] thr=1   paramiko.transport: Got server p (2048 bits)
+DEB [20240607-23:46:43.367] thr=1   paramiko.transport: kex engine KexGex specified hash_algo <built-in function openssl_sha1>
+DEB [20240607-23:46:43.368] thr=1   paramiko.transport: Switch to new keys ...
+DEB [20240607-23:46:43.369] thr=2   paramiko.transport: Adding ssh-rsa host key for 192.168.1.15: b'965118b7855055483ac906c995c73a6a'
+DEB [20240607-23:46:43.370] thr=2   paramiko.transport: Trying SSH key b'bb2b65bece238b1cd8d4647ecbb3532f'
+DEB [20240607-23:46:43.571] thr=1   paramiko.transport: userauth is OK
+DEB [20240607-23:46:43.572] thr=1   paramiko.transport: Finalizing pubkey algorithm for key of type 'ssh-rsa'
+DEB [20240607-23:46:43.572] thr=1   paramiko.transport: Our pubkey algorithm list: ['ssh-rsa']
+DEB [20240607-23:46:43.572] thr=1   paramiko.transport: Server did not send a server-sig-algs list; defaulting to our first preferred algo ('ssh-rsa')
+DEB [20240607-23:46:43.572] thr=1   paramiko.transport: NOTE: you may use the 'disabled_algorithms' SSHClient/Transport init kwarg to disable that or other algorithms if your server does not support them!
+INF [20240607-23:46:45.598] thr=1   paramiko.transport: Authentication (publickey) failed.
+DEB [20240607-23:46:46.369] thr=2   paramiko.transport: Trying discovered key b'bb2b65bece238b1cd8d4647ecbb3532f' in /home/benz/.ssh/id_rsa
+INF [20240607-23:46:46.375] thr=1   paramiko.transport: Disconnect (code 2): Protocol error: expected packet type 50, got 5
+DEB [20240607-23:47:39.648] thr=1   paramiko.transport: starting thread (client mode): 0x9d259d50
+DEB [20240607-23:47:39.648] thr=1   paramiko.transport: Local version/idstring: SSH-2.0-paramiko_2.12.0
+DEB [20240607-23:47:39.649] thr=1   paramiko.transport: Remote version/idstring: SSH-1.99-Cisco-1.25
+INF [20240607-23:47:39.649] thr=1   paramiko.transport: Connected (version 1.99, client Cisco-1.25)
+DEB [20240607-23:47:39.650] thr=1   parami
