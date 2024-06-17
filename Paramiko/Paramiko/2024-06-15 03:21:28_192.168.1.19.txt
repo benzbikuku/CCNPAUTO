@@ -1,0 +1,40 @@
+
+coop_r3#interface  Gi2
+          ^
+% Invalid input detected at '^' marker.
+
+coop_r3#
+coop_r3# no ip address
+            ^
+% Invalid input detected at '^' marker.
+
+coop_r3#
+coop_r3# ip address 10.10.13.3 255.255.255.0
+            ^
+% Invalid input detected at '^' marker.
+
+coop_r3#
+coop_r3# no shutdown
+            ^
+% Invalid input detected at '^' marker.
+
+coop_r3#interface  lo0 
+          ^
+% Invalid input detected at '^' marker.
+
+coop_r3#
+coop_r3# no ip address
+            ^
+% Invalid input detected at '^' marker.
+
+coop_r3#
+coop_r3# ip address 10.10.3.3 255.255.255.255 
+            ^
+% Invalid input detected at '^' marker.
+
+coop_r3#
+coop_r3# no shutdown
+            ^
+% Invalid input detected at '^' marker.
+
+coop_r3#

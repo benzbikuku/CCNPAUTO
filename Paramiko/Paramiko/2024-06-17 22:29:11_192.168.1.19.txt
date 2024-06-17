@@ -1,0 +1,141 @@
+
+coop_r3#
+coop_r3#conf terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+coop_r3(config)#!version 12.4
+coop_r3(config)#conf t
+                     ^
+% Invalid input detected at '^' marker.
+
+coop_r3(config)#service timestamps debug datetime msec
+coop_r3(config)#service timestamps log datetime msec
+coop_r3(config)#no service password-encryption
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!boot-start-marker
+coop_r3(config)#!boot-end-marker
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#aaa new-model
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#aaa authentication login default local
+coop_r3(config)#aaa authorization exec default local 
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!aaa session-id common
+coop_r3(config)#!memory-size iomem 5
+coop_r3(config)#!ip cef
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#ip domain lookup
+coop_r3(config)#ip domain name ant.amazon.com
+coop_r3(config)#!
+coop_r3(config)#!multilink bundle-name authenticated
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#username benz privilege 15 secret 5 $1$02Yh$TPTIpiVzJ5zXEb9tJ$nz privilege 15 secret 5 $1$02Yh$TPTIpiVzJ5zXEb9tJV         5xb.
+coop_r3(config)#username tiger privilege 15 password 0 lab
+coop_r3(config)#archive
+coop_r3(config-archive)# log config
+coop_r3(config-archive-log-cfg)#  hidekeys
+coop_r3(config-archive-log-cfg)#! 
+coop_r3(config-archive-log-cfg)#!
+coop_r3(config-archive-log-cfg)#!
+coop_r3(config-archive-log-cfg)#!
+coop_r3(config-archive-log-cfg)#ip ssh version 2
+coop_r3(config)#ip scp server enable
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!
+coop_r3(config)#!interface GigabitEthernet1
+coop_r3(config)#! ip address 10.10.12.2 255.255.255.0
+coop_r3(config)#! no shutdown
+coop_r3(config)#! duplex auto
+coop_r3(config)#! speed auto
+coop_r3(config)#!
+coop_r3(config)#!interface GigabitEthernet2
+coop_r3(config)#! ip address 192.168.1.17 255.255.255.0
+coop_r3(config)#! no shutdown
+coop_r3(config)#! duplex auto
+coop_r3(config)#! speed auto
+coop_r3(config)#!
+coop_r3(config)#!interface FastEthernet1/0
+coop_r3(config)#! no ip address
+coop_r3(config)#! shutdown
+coop_r3(config)#! duplex auto
+coop_r3(config)#! speed auto
+coop_r3(config)#!
+coop_r3(config)#router eigrp 101
+coop_r3(config-router)# network 10.10.0.0 0.0.255.255
+coop_r3(config-router)# network 172.16.2.0 0.0.0.255
+coop_r3(config-router)# no auto-summary
+coop_r3(config-router)# eigrp router-id 10.10.2.2
+coop_r3(config-router)#!
+coop_r3(config-router)#!ip forward-protocol nd
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!ip http server
+coop_r3(config-router)#!no ip http secure-server
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!control-plane
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#!
+coop_r3(config-router)#line con 0
+coop_r3(config-line)#line aux 0
+                          ^
+% Invalid input detected at '^' marker.
+
+coop_r3(config)#line vty 0 4
+coop_r3(config-line)# transport input ssh
+coop_r3(config-line)#!
+coop_r3(config-line)#!
+coop_r3(config-line)#!end
+coop_r3(config-line)# int Gi1
+coop_r3(config-if)#ip address 10.10.13.3 255.255.255.0
+coop_r3(config-if)#no shutdown
+coop_r3(config-if)#int lo 0
+coop_r3(config-if)#ip address 10.10.3.3 255.255.255.255 
+coop_r3(config-if)#no shutdown
+coop_r3(config-if)#int lo 1
+coop_r3(config-if)#ip address 172.6.3.3 255.255.255.255
+coop_r3(config-if)#no shutdown
+coop_r3(config-if)#

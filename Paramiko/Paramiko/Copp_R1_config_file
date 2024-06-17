@@ -1,0 +1,12 @@
+interface  fa0/0
+	 no ip address
+	 ip address 10.10.11.1 255.255.255.0
+	 no shutdown
+interface  lo0 
+	 no ip address
+	 ip address 10.10.1.1 255.255.255.255 
+	 no shutdown
+interface  lo1 
+	 no ip address
+	 ip address 172.6.1.1 255.255.255.255 
+	 no shutdown

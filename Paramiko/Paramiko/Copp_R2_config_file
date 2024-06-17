@@ -1,0 +1,135 @@
+interface  fa0/0
+	 no ip address
+	 ip address 10.10.12.2 255.255.255.0
+	 no shutdown
+interface  lo0 
+	 no ip address
+	 ip address 10.10.2.2 255.255.255.255 
+	 no shutdown
+interface  lo1 
+	 no ip address
+	 ip address 172.6.2.2 255.255.255.255 
+	 no shutdown
+
+!
+!version 12.4
+conf t
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+!
+!boot-start-marker
+!boot-end-marker
+!
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local 
+!
+!
+!aaa session-id common
+!memory-size iomem 5
+!ip cef
+!
+!
+!
+!
+ip domain lookup
+ip domain name ant.amazon.com
+!
+!multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username benz privilege 15 secret 5 $1$02Yh$TPTIpiVzJ5zXEb9tJV5xb.
+username tiger privilege 15 password 0 lab
+archive
+ log config
+  hidekeys
+! 
+!
+!
+!
+ip ssh version 2
+ip scp server enable
+!
+!
+!
+!
+!
+!
+!interface GigabitEthernet1
+! ip address 10.10.12.2 255.255.255.0
+! no shutdown
+! duplex auto
+! speed auto
+!
+!interface GigabitEthernet2
+! ip address 192.168.1.17 255.255.255.0
+! no shutdown
+! duplex auto
+! speed auto
+!
+!interface FastEthernet1/0
+! no ip address
+! shutdown
+! duplex auto
+! speed auto
+!
+router eigrp 101
+ network 10.10.0.0 0.0.255.255
+ network 172.16.2.0 0.0.0.255
+ no auto-summary
+ eigrp router-id 10.10.2.2
+!
+!ip forward-protocol nd
+!
+!
+!ip http server
+!no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ transport input ssh
+!
+!
+end
