@@ -36,15 +36,15 @@ def cisco_cmd_executor(hostname, cmd):
         now = datetime.datetime.now().replace(microsecond=0)
         current_config_file = f"{now}_{hostname}.txt"
         
-        with open(current_config_file,'a') as output_data:
+        with open(current_config_file,'w') as output_data:
 
             for command in cmd:
-                device_access.send(f'{command}\n')
+                device_access.send(f'{command}')
                 time.sleep(2)
                 ouput = device_access.recv(65535)
                 print(ouput.decode(), end='')
                 output_data.write(ouput.decode())
-            ssh_client.close()
+            # ssh_client.close()
     except ssh_exception.AuthenticationException:
         print("Check ssh credentials")
     except ssh_exception.NoValidConnectionsError:

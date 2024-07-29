@@ -1,0 +1,207 @@
+
+Coop_R1#terminal len 0
+Coop_R1#show run
+Building configuration...
+
+Current configuration : 2130 bytes
+!
+! Last configuration change at 00:13:00 UTC Sat Jun 15 2024
+!
+version 16.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname Coop_R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local 
+!
+!
+!
+!
+!
+aaa session-id common
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+ip domain name ant.amazon.com
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9662J8ILUMY
+diagnostic bootup level minimal
+archive
+ log config
+  hidekeys
+!
+spanning-tree extend system-id
+!
+!
+username benz privilege 15 secret 5 $1$02Yh$TPTIpiVzJ5zXEb9tJV5xb.
+username tiger privilege 15 password 0 lab
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 10.10.2.2 255.255.255.255
+!
+interface Loopback1
+ ip address 172.16.2.2 255.255.255.0
+!
+interface GigabitEthernet1
+ ip address 10.10.12.2 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address 192.168.1.17 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+!
+router eigrp 101
+ network 10.10.0.0 0.0.255.255
+ network 172.16.2.0 0.0.0.255
+ eigrp router-id 10.10.2.2
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip tftp source-interface GigabitEthernet3
+ip ssh version 2
+ip ssh pubkey-chain
+  username benz
+   key-hash ssh-rsa BB2B65BECE238B1CD8D4647ECBB3532F benz@entauto
+ip scp server enable
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0
+ transport input ssh
+line vty 1
+ length 0
+ transport input ssh
+line vty 2 4
+ transport input ssh
+!
+ntp server pool.ntp.org
+ntp server time-pnp.cisco.com
+!
+!
+!
+!
+!
+end
+
+Coop_R1#

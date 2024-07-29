@@ -1,0 +1,10 @@
+Coop_R1#terminal len 0
+Coop_R1#show ip interface brief
+Interface              IP-Address      OK? Method Status    Protocol
+GigabitEthernet1       10.10.12.2      YES NVRAM  up           up      
+GigabitEthernet2       192.168.1.17    YES NVRAM  up           up      
+GigabitEthernet3       unassigned      YES NVRAM  up           up      
+GigabitEthernet4       unassigned      YES NVRAM  administratively down down    
+Loopback0              10.10.2.2       YES NVRAM  up            up      
+Loopback1              172.16.2.2      YES NVRAM  up            up      
+Coop_R1#

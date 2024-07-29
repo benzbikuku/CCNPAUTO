@@ -1,0 +1,184 @@
+
+ENAUTO#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+ENAUTO(config)# int lo101
+ENAUTO(config-if)#ip address 1.1.1.1 255.255.255.255
+ENAUTO(config-if)#end
+ENAUTO#terminal len 0
+ENAUTO#show run
+Building configuration...
+
+Current configuration : 1694 bytes
+!
+! Last configuration change at 01:00:18 UTC Sun Jul 28 2024 by admin
+! NVRAM config last updated at 23:27:00 UTC Sat Jul 27 2024
+!
+version 16.4
+service config
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname ENAUTO
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 96Z5LKYWXSE
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+username cisco privilege 15 secret 5 $1$mroI$kb6FX6V./5bs2WEO4Bq61.
+username admin privilege 15
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback101
+ ip address 1.1.1.1 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address dhcp
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+!
+ip ssh pubkey-chain
+  username cisco
+  username admin
+   key-hash ssh-rsa BB2B65BECE238B1CD8D4647ECBB3532F benz@entautoendend
+!
+!
+!
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+ntp server time-pnp.cisco.com
+ntp server pool.ntp.org
+!
+!
+!
+!
+!
+end
+
+ENAUTO#

@@ -1,3 +1,6 @@
+####exec_command can be used only to send one command at a time.
+
+
 import time
 from paramiko import client
 from getpass import getpass
@@ -13,7 +16,7 @@ nxsos_command = ['show version']
 
 
 def exec_cmd_executor(hostname, cmd):
-    password = getpass(f"Enter password for {hostname}: ") or "admin"
+    password = getpass(f" \U0001F511 Enter password for {hostname}: ") or "admin"
     ssh_client = client.SSHClient()
     ssh_client.set_missing_host_key_policy(client.AutoAddPolicy)
     ssh_client.connect(hostname=hostname, username=username, port=22, password=password, look_for_keys=False,
@@ -30,7 +33,7 @@ def exec_cmd_executor(hostname, cmd):
             print(f"Error Occurred : {err}")
 
 
-exec_cmd_executor("192.168.1.15", csr_command)
+exec_cmd_executor("192.168.1.43", csr_command)
 
 time.sleep(5)
-exec_cmd_executor("192.168.1.16",nxsos_command)
+exec_cmd_executor("192.168.1.43",nxsos_command)

@@ -1,0 +1,2 @@
+
+ENAUTO#conf t int lo101ip address 1.1.1.1 255.255.255.255endterminal len 0sho$lo101ip address 1.1.1.1 255.255.255.255endterminal len 0show          run
