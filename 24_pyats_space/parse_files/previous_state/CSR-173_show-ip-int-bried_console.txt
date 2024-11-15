@@ -1,0 +1,7 @@
++++ CSR-173 with via 'cli': executing command 'show ip interface bried' +++
+show ip interface bried
+show ip interface bried
+                      ^
+% Invalid input detected at '^' marker.
+
+CSR-173#

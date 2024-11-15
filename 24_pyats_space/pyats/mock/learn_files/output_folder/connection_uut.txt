@@ -1,0 +1,60 @@
+
+2024-11-08 05:23:15,107: %UNICON-INFO: +++ nx-osv-1 logfile learn_files/output_folder/connection_uut.txt +++
+
+2024-11-08 05:23:15,107: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+Trying mock_device ...
+
+
+2024-11-08 05:23:16,497: %UNICON-INFO: +++ connection to spawn: mock_device_cli --os nxos --mock_data_dir mocked_data/nxos --state connect, id: 127041956942672 +++
+
+2024-11-08 05:23:16,498: %UNICON-INFO: connection to nx-osv-1
+Connected to mock_device.
+Escape character is '^]'.
+
+switch#
+
+2024-11-08 05:23:18,072: %UNICON-WARNING: Invalid hostname detected: found switch, expected nx-osv-1
+
+2024-11-08 05:23:18,073: %UNICON-INFO: +++ initializing handle +++
+
+2024-11-08 05:23:18,203: %UNICON-INFO: +++ nx-osv-1(alias=uut) with via 'ssh': executing command 'term length 0' +++
+term length 0
+switch#
+
+2024-11-08 05:23:18,407: %UNICON-INFO: +++ nx-osv-1(alias=uut) with via 'ssh': executing command 'term width 511' +++
+term width 511
+switch#
+
+2024-11-08 05:23:18,609: %UNICON-INFO: +++ nx-osv-1(alias=uut) with via 'ssh': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+switch#
+
+2024-11-08 05:31:17,457: %UNICON-INFO: +++ nx-osv-1 logfile learn_files/output_folder/connection_uut.txt +++
+
+2024-11-08 05:31:17,458: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+Trying mock_device ...
+Connected to mock_device.
+Escape character is '^]'.
+
+
+2024-11-08 05:31:18,895: %UNICON-INFO: +++ connection to spawn: mock_device_cli --os nxos --mock_data_dir mocked_data/nxos --state connect, id: 126919699032912 +++
+
+2024-11-08 05:31:18,895: %UNICON-INFO: connection to nx-osv-1
+
+switch#
+
+2024-11-08 05:31:20,490: %UNICON-WARNING: Invalid hostname detected: found switch, expected nx-osv-1
+
+2024-11-08 05:31:20,490: %UNICON-INFO: +++ initializing handle +++
+
+2024-11-08 05:31:20,619: %UNICON-INFO: +++ nx-osv-1(alias=uut) with via 'ssh': executing command 'term length 0' +++
+term length 0
+switch#
+
+2024-11-08 05:31:20,823: %UNICON-INFO: +++ nx-osv-1(alias=uut) with via 'ssh': executing command 'term width 511' +++
+term width 511
+switch#
+
+2024-11-08 05:31:21,024: %UNICON-INFO: +++ nx-osv-1(alias=uut) with via 'ssh': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+switch#

@@ -1,10 +1,10 @@
 from ncclient import manager
 import xml.dom.minidom as md
 
-lab_173 = {'host': '192.168.0.63',
+lab_173 = {'host': '192.168.1.95',
            'port': 830,
-           'username': 'admin',
-           'password': 'admin',
+           'username': 'cisco',
+           'password': 'cisco',
            'hostkey_verify': False,
            'device_params': {'name': 'csr'}}
 
@@ -21,7 +21,7 @@ output = rtr_mgr.get_config('running', interface_filter)
 xmldata = md.parseString(str(output))
 new_data = xmldata.toprettyxml(indent="  ")
 print(new_data)
-with open('all_int.xml', 'w') as data:
+with open('/home/benz/CCNPAUTO/21_NETCONF/21_NETCONF/all_int.xml', 'w') as data:
     data.write(new_data)
 
 

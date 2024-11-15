@@ -1,0 +1,60 @@
+
+2022-08-05 00:07:19,528: %UNICON-INFO: +++ nx-osv-1 logfile learn_files/output_folder/connection_uut.txt +++
+
+2022-08-05 00:07:19,529: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+Trying mock_device ...
+Connected to mock_device.
+Escape character is '^]'.
+
+
+2022-08-05 00:07:20,583: %UNICON-INFO: +++ connection to spawn: mock_device_cli --os nxos --mock_data_dir mocked_data/nxos --state connect, id: 140591001664096 +++
+
+2022-08-05 00:07:20,583: %UNICON-INFO: connection to nx-osv-1
+
+switch#
+
+2022-08-05 00:07:21,614: %UNICON-WARNING: Invalid hostname detected: found switch, expected nx-osv-1
+
+2022-08-05 00:07:21,615: %UNICON-INFO: +++ initializing handle +++
+
+2022-08-05 00:07:21,745: %UNICON-INFO: +++ nx-osv-1 with via 'ssh': executing command 'term length 0' +++
+term length 0
+switch#
+
+2022-08-05 00:07:22,011: %UNICON-INFO: +++ nx-osv-1 with via 'ssh': executing command 'term width 511' +++
+term width 511
+switch#
+
+2022-08-05 00:07:22,270: %UNICON-INFO: +++ nx-osv-1 with via 'ssh': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+switch#
+
+2022-08-05 00:09:17,838: %UNICON-INFO: +++ nx-osv-1 logfile learn_files/output_folder/connection_uut.txt +++
+
+2022-08-05 00:09:17,838: %UNICON-INFO: +++ Unicon plugin nxos (unicon.plugins.nxos) +++
+Trying mock_device ...
+Connected to mock_device.
+Escape character is '^]'.
+
+
+2022-08-05 00:09:18,843: %UNICON-INFO: +++ connection to spawn: mock_device_cli --os nxos --mock_data_dir mocked_data/nxos --state connect, id: 139720944237200 +++
+
+2022-08-05 00:09:18,843: %UNICON-INFO: connection to nx-osv-1
+
+switch#
+
+2022-08-05 00:09:19,850: %UNICON-WARNING: Invalid hostname detected: found switch, expected nx-osv-1
+
+2022-08-05 00:09:19,850: %UNICON-INFO: +++ initializing handle +++
+
+2022-08-05 00:09:19,969: %UNICON-INFO: +++ nx-osv-1 with via 'ssh': executing command 'term length 0' +++
+term length 0
+switch#
+
+2022-08-05 00:09:20,228: %UNICON-INFO: +++ nx-osv-1 with via 'ssh': executing command 'term width 511' +++
+term width 511
+switch#
+
+2022-08-05 00:09:20,469: %UNICON-INFO: +++ nx-osv-1 with via 'ssh': executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+switch#

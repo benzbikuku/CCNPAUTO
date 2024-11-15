@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:8c41c916-eaf9-48ba-a86c-6fc38d0e5255">
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:d1b5a82e-e18f-4bcc-9384-716de2c72bf6">
   <data>
     <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
       <version>17.3</version>
@@ -8,7 +8,7 @@
       <memory>
         <free>
           <low-watermark>
-            <processor>71497</processor>
+            <processor>71477</processor>
           </low-watermark>
         </free>
       </memory>
@@ -57,36 +57,31 @@
         </punt-keepalive>
       </platform>
       <hostname>CSR-173</hostname>
-      <archive>
-        <path>bootflash:</path>
-      </archive>
-      <username>
-        <name>admin</name>
-        <privilege>15</privilege>
+      <enable>
         <secret>
-          <encryption>9</encryption>
-          <secret>$9$JrGeAo16/Cr.6E$z5n.3UQWxsYnFJ7tALWqi8nljBcSDkfwV7CfHUibh.c</secret>
+          <type>9</type>
+          <secret>$9$bbRAsxAg4cPLL.$7YZWtAiCLr0JON7CYrdAQabUNJEeH2NNs4Yb2yVdofI</secret>
         </secret>
+      </enable>
+      <username>
+        <name>cisco</name>
+        <privilege>15</privilege>
+        <password>
+          <encryption>0</encryption>
+          <password>cisco</password>
+        </password>
       </username>
       <username>
-        <name>admin1</name>
+        <name>netconf</name>
         <privilege>15</privilege>
-        <secret>
-          <encryption>9</encryption>
-          <secret>$9$/5xCZwejA6hFSU$IYyiGLxD/uy6qpKaqQ0/U6tBc3RDPQhMA0phFdDk6IU</secret>
-        </secret>
-      </username>
-      <username>
-        <name>admin2</name>
-        <privilege>15</privilege>
-      </username>
-      <username>
-        <name>admin3</name>
-        <privilege>15</privilege>
+        <password>
+          <encryption>0</encryption>
+          <password>netconf</password>
+        </password>
       </username>
       <ip>
         <domain>
-          <name>test2.com</name>
+          <name>netconf.com</name>
         </domain>
         <forward-protocol>
           <protocol>nd</protocol>
@@ -102,25 +97,12 @@
             <prefix>0.0.0.0</prefix>
             <mask>0.0.0.0</mask>
             <fwd-list>
-              <fwd>192.168.0.1</fwd>
+              <fwd>GigabitEthernet2</fwd>
             </fwd-list>
           </ip-route-interface-forwarding-list>
         </route>
-        <scp>
-          <server>
-            <enable/>
-          </server>
-        </scp>
         <ssh>
-          <pubkey-chain>
-            <username>
-              <name>admin2</name>
-              <key-hash>
-                <key-type>ssh-rsa</key-type>
-                <key-hash-value>F1973AAD0DB73774C2E0786C8C3F1C41 evolve@UbuntuOS</key-hash-value>
-              </key-hash>
-            </username>
-          </pubkey-chain>
+          <time-out>60</time-out>
         </ssh>
         <http xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-http">
           <authentication>
@@ -146,7 +128,7 @@
           <ip>
             <address>
               <primary>
-                <address>192.168.0.63</address>
+                <address>192.168.1.95</address>
                 <mask>255.255.255.0</mask>
               </primary>
             </address>
@@ -169,7 +151,7 @@
           <ip>
             <address>
               <primary>
-                <address>22.2.2.2</address>
+                <address>33.3.3.3</address>
                 <mask>255.255.255.0</mask>
               </primary>
             </address>
@@ -218,27 +200,12 @@
           </negotiation>
         </GigabitEthernet>
         <Loopback>
-          <name>1001</name>
+          <name>0</name>
+          <description>Loopback 0</description>
           <ip>
             <address>
               <primary>
-                <address>1.1.1.10</address>
-                <mask>255.255.255.0</mask>
-              </primary>
-            </address>
-          </ip>
-          <logging>
-            <event>
-              <link-status/>
-            </event>
-          </logging>
-        </Loopback>
-        <Loopback>
-          <name>1003</name>
-          <ip>
-            <address>
-              <primary>
-                <address>2.1.1.1</address>
+                <address>1.1.1.1</address>
                 <mask>255.255.255.0</mask>
               </primary>
             </address>
@@ -255,13 +222,22 @@
         <monitor-conf>
           <monitor>false</monitor>
         </monitor-conf>
-        <console-config>
-          <console>false</console>
-        </console-config>
         <console-conf>
           <console>false</console>
         </console-conf>
       </logging>
+      <aaa>
+        <new-model xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-aaa"/>
+        <authorization xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-aaa">
+          <exec>
+            <name>default</name>
+            <a1>
+              <local/>
+            </a1>
+          </exec>
+        </authorization>
+        <session-id xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-aaa">common</session-id>
+      </aaa>
       <login>
         <on-success>
           <log/>
@@ -298,15 +274,12 @@
               </certificate>
             </chain>
             <chain>
-              <name>TP-self-signed-1106392104</name>
+              <name>TP-self-signed-384059359</name>
               <certificate>
                 <serial>01</serial>
                 <certtype>self-signed</certtype>
               </certificate>
             </chain>
-            <pool>
-              <cabundle>nvram:ios_core.p7b</cabundle>
-            </pool>
           </certificate>
           <trustpoint>
             <id>SLA-TrustPoint</id>
@@ -316,43 +289,51 @@
             <revocation-check>crl</revocation-check>
           </trustpoint>
           <trustpoint>
-            <id>TP-self-signed-1106392104</id>
+            <id>TP-self-signed-384059359</id>
             <enrollment>
               <selfsigned/>
             </enrollment>
             <revocation-check>none</revocation-check>
-            <subject-name>cn=IOS-Self-Signed-Certificate-1106392104</subject-name>
+            <subject-name>cn=IOS-Self-Signed-Certificate-384059359</subject-name>
           </trustpoint>
         </pki>
       </crypto>
       <license>
         <udi>
           <pid>CSR1000V</pid>
-          <sn>90OR9CH8IZ7</sn>
+          <sn>9L690IPXHZA</sn>
         </udi>
       </license>
       <line>
         <console>
           <first>0</first>
-          <exec-timeout>
-            <minutes>0</minutes>
-            <seconds>0</seconds>
-          </exec-timeout>
+          <logging>
+            <synchronous/>
+          </logging>
           <stopbits>1</stopbits>
         </console>
         <vty>
           <first>0</first>
-          <last>4</last>
-          <exec-timeout>
-            <minutes>0</minutes>
-            <seconds>0</seconds>
-          </exec-timeout>
-          <login>
-            <local/>
-          </login>
           <transport>
             <input>
-              <all/>
+              <input>ssh</input>
+            </input>
+          </transport>
+        </vty>
+        <vty>
+          <first>1</first>
+          <last>4</last>
+          <password>
+            <secret>cisco</secret>
+          </password>
+          <privilege>
+            <level>
+              <number>15</number>
+            </level>
+          </privilege>
+          <transport>
+            <input>
+              <input>ssh</input>
             </input>
           </transport>
         </vty>
@@ -390,7 +371,7 @@
         <enabled>true</enabled>
         <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
           <address>
-            <ip>192.168.0.63</ip>
+            <ip>192.168.1.95</ip>
             <netmask>255.255.255.0</netmask>
           </address>
         </ipv4>
@@ -402,7 +383,7 @@
         <enabled>true</enabled>
         <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
           <address>
-            <ip>22.2.2.2</ip>
+            <ip>33.3.3.3</ip>
             <netmask>255.255.255.0</netmask>
           </address>
         </ipv4>
@@ -423,24 +404,13 @@
         <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
       </interface>
       <interface>
-        <name>Loopback1001</name>
+        <name>Loopback0</name>
+        <description>Loopback 0</description>
         <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:softwareLoopback</type>
         <enabled>true</enabled>
         <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
           <address>
-            <ip>1.1.1.10</ip>
-            <netmask>255.255.255.0</netmask>
-          </address>
-        </ipv4>
-        <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip"/>
-      </interface>
-      <interface>
-        <name>Loopback1003</name>
-        <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:softwareLoopback</type>
-        <enabled>true</enabled>
-        <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
-          <address>
-            <ip>2.1.1.1</ip>
+            <ip>1.1.1.1</ip>
             <netmask>255.255.255.0</netmask>
           </address>
         </ipv4>
@@ -477,7 +447,7 @@
                 <route>
                   <destination-prefix>0.0.0.0/0</destination-prefix>
                   <next-hop>
-                    <next-hop-address>192.168.0.1</next-hop-address>
+                    <outgoing-interface>GigabitEthernet2</outgoing-interface>
                   </next-hop>
                 </route>
               </ipv4>
@@ -504,9 +474,9 @@
             <ipv4 xmlns="http://openconfig.net/yang/interfaces/ip">
               <addresses>
                 <address>
-                  <ip>192.168.0.63</ip>
+                  <ip>192.168.1.95</ip>
                   <config>
-                    <ip>192.168.0.63</ip>
+                    <ip>192.168.1.95</ip>
                     <prefix-length>24</prefix-length>
                   </config>
                 </address>
@@ -521,7 +491,7 @@
         </subinterfaces>
         <ethernet xmlns="http://openconfig.net/yang/interfaces/ethernet">
           <config>
-            <mac-address>50:00:00:07:00:00</mac-address>
+            <mac-address>50:00:00:38:00:00</mac-address>
             <auto-negotiate>true</auto-negotiate>
             <enable-flow-control>true</enable-flow-control>
           </config>
@@ -544,9 +514,9 @@
             <ipv4 xmlns="http://openconfig.net/yang/interfaces/ip">
               <addresses>
                 <address>
-                  <ip>22.2.2.2</ip>
+                  <ip>33.3.3.3</ip>
                   <config>
-                    <ip>22.2.2.2</ip>
+                    <ip>33.3.3.3</ip>
                     <prefix-length>24</prefix-length>
                   </config>
                 </address>
@@ -561,7 +531,7 @@
         </subinterfaces>
         <ethernet xmlns="http://openconfig.net/yang/interfaces/ethernet">
           <config>
-            <mac-address>50:00:00:07:00:01</mac-address>
+            <mac-address>50:00:00:38:00:01</mac-address>
             <auto-negotiate>true</auto-negotiate>
             <enable-flow-control>true</enable-flow-control>
           </config>
@@ -590,7 +560,7 @@
         </subinterfaces>
         <ethernet xmlns="http://openconfig.net/yang/interfaces/ethernet">
           <config>
-            <mac-address>50:00:00:07:00:02</mac-address>
+            <mac-address>50:00:00:38:00:02</mac-address>
             <auto-negotiate>true</auto-negotiate>
             <enable-flow-control>true</enable-flow-control>
           </config>
@@ -619,17 +589,18 @@
         </subinterfaces>
         <ethernet xmlns="http://openconfig.net/yang/interfaces/ethernet">
           <config>
-            <mac-address>50:00:00:07:00:03</mac-address>
+            <mac-address>50:00:00:38:00:03</mac-address>
             <auto-negotiate>true</auto-negotiate>
             <enable-flow-control>true</enable-flow-control>
           </config>
         </ethernet>
       </interface>
       <interface>
-        <name>Loopback1001</name>
+        <name>Loopback0</name>
         <config>
-          <name>Loopback1001</name>
+          <name>Loopback0</name>
           <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:softwareLoopback</type>
+          <description>Loopback 0</description>
           <enabled>true</enabled>
         </config>
         <subinterfaces>
@@ -637,47 +608,15 @@
             <index>0</index>
             <config>
               <index>0</index>
+              <description>Loopback 0</description>
               <enabled>true</enabled>
             </config>
             <ipv4 xmlns="http://openconfig.net/yang/interfaces/ip">
               <addresses>
                 <address>
-                  <ip>1.1.1.10</ip>
+                  <ip>1.1.1.1</ip>
                   <config>
-                    <ip>1.1.1.10</ip>
-                    <prefix-length>24</prefix-length>
-                  </config>
-                </address>
-              </addresses>
-            </ipv4>
-            <ipv6 xmlns="http://openconfig.net/yang/interfaces/ip">
-              <config>
-                <enabled>false</enabled>
-              </config>
-            </ipv6>
-          </subinterface>
-        </subinterfaces>
-      </interface>
-      <interface>
-        <name>Loopback1003</name>
-        <config>
-          <name>Loopback1003</name>
-          <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:softwareLoopback</type>
-          <enabled>true</enabled>
-        </config>
-        <subinterfaces>
-          <subinterface>
-            <index>0</index>
-            <config>
-              <index>0</index>
-              <enabled>true</enabled>
-            </config>
-            <ipv4 xmlns="http://openconfig.net/yang/interfaces/ip">
-              <addresses>
-                <address>
-                  <ip>2.1.1.1</ip>
-                  <config>
-                    <ip>2.1.1.1</ip>
+                    <ip>1.1.1.1</ip>
                     <prefix-length>24</prefix-length>
                   </config>
                 </address>
@@ -785,12 +724,17 @@
                 </config>
                 <next-hops>
                   <next-hop>
-                    <index>192.168.0.1</index>
+                    <index>GigabitEthernet2</index>
                     <config>
-                      <index>192.168.0.1</index>
-                      <next-hop>192.168.0.1</next-hop>
+                      <index>GigabitEthernet2</index>
+                      <next-hop xmlns:oc-loc-rt="http://openconfig.net/yang/local-routing">oc-loc-rt:LOCAL_LINK</next-hop>
                       <metric>1</metric>
                     </config>
+                    <interface-ref>
+                      <config>
+                        <interface>GigabitEthernet2</interface>
+                      </config>
+                    </interface-ref>
                   </next-hop>
                 </next-hops>
               </static>

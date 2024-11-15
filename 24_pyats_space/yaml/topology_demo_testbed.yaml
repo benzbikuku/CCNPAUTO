@@ -1,0 +1,44 @@
+testbed:
+    name: IOS_Testbed
+    credentials:
+        default:
+            username: admin
+            password: admin
+#################################################
+devices:
+    R1_vIOS:
+        os: ios
+        type: ios
+        connections:
+            a:
+                protocol: ssh
+                ip: 192.168.0.101
+    R2_vIOS:
+        os: ios
+        type: ios
+        connections:
+            a:
+                protocol: ssh
+                ip: 192.168.0.102
+##################################################
+topology:
+    R1_vIOS:
+        interfaces:
+            GigabitEthernet0/0:
+                ipv4: 10.0.0.1/24
+                link: OSPF-LINK-1
+                type: GigabitEthernet
+            Loopback0:
+                ipv4: 192.168.0.1/32
+                link: R1_Loopback0
+                type: loopback
+    R2_vIOS:
+        interfaces:
+            GigabitEthernet0/0:
+                ipv4: 10.0.0.2/24
+                link: OSPF-LINK-1
+                type: GigabitEthernet
+            Loopback0:
+                ipv4: 192.168.0.2/32
+                link: R1_Loopback0
+                type: loopback

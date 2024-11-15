@@ -1,0 +1,17 @@
+
+2022-08-05 00:17:32,936: %UNICON-INFO: +++ vIOS_61 logfile learn_files/router_features/connection_vIOS_61.txt +++
+
+2022-08-05 00:17:32,936: %UNICON-INFO: +++ Unicon plugin ios/iosv (unicon.plugins.ios.iosv) +++
+
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+
+2022-08-05 00:17:33,224: %UNICON-INFO: +++ connection to spawn: ssh -l admin 192.168.0.61, id: 140124476331376 +++
+
+2022-08-05 00:17:33,225: %UNICON-INFO: connection to vIOS_61

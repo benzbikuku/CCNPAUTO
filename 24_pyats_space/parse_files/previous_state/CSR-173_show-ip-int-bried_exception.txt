@@ -1,0 +1,30 @@
+Issue with the parser show ip int bried
+
+Traceback (most recent call last):
+  File "/home/benz/CCNPAUTO/24_pyats_space/pyats/lib/python3.11/site-packages/unicon/plugins/generic/service_implementation.py", line 737, in call_service
+    self.result = self.get_service_result()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/unicon/bases/routers/services.py", line 235, in unicon.bases.routers.services.BaseService.get_service_result
+unicon.core.errors.SubCommandFailure: ('sub_command failure, patterns matched in the output:', ['^%\\s*[Ii]nvalid (command|input)'], 'service result', "show ip interface bried\r\nshow ip interface bried\r\n                      ^\r\n% Invalid input detected at '^' marker.\r\n\r\nCSR-173#")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/genie/metaparser/_metaparser.py", line 308, in genie.metaparser._metaparser.MetaParser.parse
+  File "/home/benz/CCNPAUTO/24_pyats_space/pyats/lib/python3.11/site-packages/genie/libs/parser/iosxe/show_interface.py", line 2277, in cli
+    out = self.device.execute(cmd)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/unicon/bases/routers/services.py", line 259, in unicon.bases.routers.services.BaseService.__call__
+  File "/home/benz/CCNPAUTO/24_pyats_space/pyats/lib/python3.11/site-packages/unicon/plugins/generic/service_implementation.py", line 742, in call_service
+    raise SubCommandFailure("Command execution failed", err) from err
+unicon.core.errors.SubCommandFailure: ('Command execution failed', SubCommandFailure('sub_command failure, patterns matched in the output:', ['^%\\s*[Ii]nvalid (command|input)'], 'service result', "show ip interface bried\r\nshow ip interface bried\r\n                      ^\r\n% Invalid input detected at '^' marker.\r\n\r\nCSR-173#"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "src/genie/cli/commands/parser.py", line 339, in genie.cli.commands.parser.ParserCommand.parse
+  File "src/genie/conf/base/device.py", line 535, in genie.conf.base.device.Device.parse
+  File "src/genie/conf/base/device.py", line 574, in genie.conf.base.device.Device._get_parser_output
+  File "src/genie/conf/base/device.py", line 572, in genie.conf.base.device.Device._get_parser_output
+  File "src/genie/metaparser/_metaparser.py", line 311, in genie.metaparser._metaparser.MetaParser.parse
+genie.metaparser.util.exceptions.InvalidCommandError: Invalid command has been executed

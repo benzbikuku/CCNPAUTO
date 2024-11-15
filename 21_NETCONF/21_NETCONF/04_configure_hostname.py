@@ -1,9 +1,9 @@
 from ncclient import manager
 
-lab_173 = {'host': '192.168.0.63',
+lab_173 = {'host': '192.168.1.95',
            'port': 830,
-           'username': 'admin',
-           'password': 'admin',
+           'username': 'cisco',
+           'password': 'cisco',
            'hostkey_verify': False,
            'device_params': {'name': 'csr'}}
 

@@ -1,0 +1,26 @@
+testbed:
+  name: My_Cisco_Testbed
+  credentials:
+    default:
+      password: '%ENC{w5HDncOOw53DoQ==}'
+      username: admin
+
+devices:
+  CSR-17.31:
+    connections:
+      cli:
+        ip: 192.168.0.63
+        protocol: ssh
+    os: iosxe
+    type: iosxe
+  vIOS_61:
+    connections:
+      cli:
+        ip: 192.168.0.61
+        protocol: ssh
+      test_t:
+        ip: 192.168.0.12
+        protocol: telnet
+        port: 32772
+    os: ios
+    platform: iosv

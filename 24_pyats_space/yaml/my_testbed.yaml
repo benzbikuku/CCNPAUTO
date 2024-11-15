@@ -1,0 +1,14 @@
+devices:
+  CSR-173:
+    connections:
+      cli:
+        ip: 192.168.1.95
+        protocol: ssh
+    credentials:
+      default:
+        password: '%ENC{w5PDosOUw5fDog==}'
+        username: cisco
+      enable:
+        password: '%ENC{w5PDosOUw5fDog==}'
+    os: iosxe
+    type: iosxe

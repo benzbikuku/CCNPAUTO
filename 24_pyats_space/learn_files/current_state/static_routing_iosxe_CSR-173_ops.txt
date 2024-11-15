@@ -1,0 +1,56 @@
+{
+  "_exclude": [],
+  "attributes": null,
+  "commands": null,
+  "connections": null,
+  "context_manager": {},
+  "info": {
+    "vrf": {
+      "default": {
+        "address_family": {
+          "ipv4": {
+            "routes": {
+              "0.0.0.0/0": {
+                "next_hop": {
+                  "outgoing_interface": {
+                    "GigabitEthernet2": {
+                      "active": true,
+                      "outgoing_interface": "GigabitEthernet2",
+                      "preference": 1
+                    }
+                  }
+                },
+                "route": "0.0.0.0/0"
+              },
+              "1.1.1.100/32": {
+                "next_hop": {
+                  "outgoing_interface": {
+                    "GigabitEthernet1": {
+                      "active": true,
+                      "outgoing_interface": "GigabitEthernet1",
+                      "preference": 1
+                    }
+                  }
+                },
+                "route": "1.1.1.100/32"
+              },
+              "1.1.1.101/32": {
+                "next_hop": {
+                  "outgoing_interface": {
+                    "GigabitEthernet1": {
+                      "active": true,
+                      "outgoing_interface": "GigabitEthernet1",
+                      "preference": 1
+                    }
+                  }
+                },
+                "route": "1.1.1.101/32"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "raw_data": false
+}

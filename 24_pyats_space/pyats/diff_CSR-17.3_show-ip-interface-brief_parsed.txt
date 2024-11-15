@@ -1,0 +1,9 @@
+--- /home/benz/CCNPAUTO/24_pyats_space/parse_files/previous_state/CSR-17.3_show-ip-interface-brief_parsed.txt
++++ /home/benz/CCNPAUTO/24_pyats_space/parse_files/current_state/CSR-17.3_show-ip-interface-brief_parsed.txt
+ interface:
+  GigabitEthernet2:
+-  ip_address: 22.3.3.3
++  ip_address: 22.2.2.2
+  GigabitEthernet3:
+-  ip_address: unassigned
++  ip_address: 3.3.3.3

@@ -1,0 +1,8 @@
++++ CSR-17.3 with via 'cli': executing command 'show ip interface brief' +++
+show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       192.168.0.63    YES NVRAM  up                    up      
+GigabitEthernet2       22.3.3.3        YES manual up                    up      
+GigabitEthernet3       unassigned      YES NVRAM  up                    up      
+GigabitEthernet4       unassigned      YES NVRAM  up                    up      
+CSR-17.3#

@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:c1142d9d-33e3-4f93-86b5-abef15a0019d">
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:1d786a08-1a93-42f4-9d77-aaa8f120314b">
   <data>
     <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
       <interface>
@@ -8,7 +8,7 @@
           <ip>
             <address>
               <primary>
-                <address>192.168.0.63</address>
+                <address>192.168.1.95</address>
                 <mask>255.255.255.0</mask>
               </primary>
             </address>
@@ -31,7 +31,7 @@
           <ip>
             <address>
               <primary>
-                <address>22.2.2.2</address>
+                <address>33.3.3.3</address>
                 <mask>255.255.255.0</mask>
               </primary>
             </address>
@@ -80,27 +80,12 @@
           </negotiation>
         </GigabitEthernet>
         <Loopback>
-          <name>1001</name>
+          <name>0</name>
+          <description>Loopback 0</description>
           <ip>
             <address>
               <primary>
-                <address>1.1.1.10</address>
-                <mask>255.255.255.0</mask>
-              </primary>
-            </address>
-          </ip>
-          <logging>
-            <event>
-              <link-status/>
-            </event>
-          </logging>
-        </Loopback>
-        <Loopback>
-          <name>1003</name>
-          <ip>
-            <address>
-              <primary>
-                <address>2.1.1.1</address>
+                <address>1.1.1.1</address>
                 <mask>255.255.255.0</mask>
               </primary>
             </address>
