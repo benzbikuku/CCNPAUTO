@@ -2,9 +2,9 @@ from netmiko import ConnectHandler, file_transfer, progress_bar
 
 csr = {
     'device_type': 'cisco_ios',
-    'host': '192.168.0.63',
-    'username': 'admin',
-    'password': 'admin'
+    'host': '192.168.1.149',
+    'username': 'cisco',
+    'password': 'cisco'
 }
 
 net_connect = ConnectHandler(**csr)
@@ -19,8 +19,8 @@ print("Connected successfully")
 #                          progress4=progress_bar)
 
 transfer = file_transfer(net_connect,
-                         source_file='csr1000v-rpboot.17.03.03.SPA.pkg',
-                         dest_file='csr1000v-rpboot.17.03.03.SPA.pkg',
+                         source_file='csr1000v-mono-universalk9.16.04.01.SPA.pkg',
+                         dest_file='csr1000v-mono-universalk9.16.04.01.SPA.pkg',
                          file_system='bootflash:',
                          direction='get',
                          overwrite_file=True,

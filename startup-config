@@ -1,0 +1,212 @@
+
+!
+! Last configuration change at 06:00:56 UTC Sat Oct 5 2024
+!
+version 16.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname ENTAUTO
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$DBzy$GqqsAhJPqtHfaytcxEQrE.
+!
+aaa new-model
+!
+!
+aaa authorization exec default local 
+!
+!
+!
+!
+!
+aaa session-id common
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+no ip domain lookup
+ip domain name cisco.com
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 96Z5LKYWXSE
+diagnostic bootup level minimal
+archive
+ path flash:archive
+file prompt quiet
+!
+spanning-tree extend system-id
+netconf-yang cisco-odm actions ACL
+netconf-yang cisco-odm actions BGP
+netconf-yang cisco-odm actions OSPF
+netconf-yang cisco-odm actions Archive
+netconf-yang cisco-odm actions IPRoute
+netconf-yang cisco-odm actions EFPStats
+netconf-yang cisco-odm actions IPSLAStats
+netconf-yang cisco-odm actions Interfaces
+netconf-yang cisco-odm actions Environment
+netconf-yang cisco-odm actions FlowMonitor
+netconf-yang cisco-odm actions MemoryStats
+netconf-yang cisco-odm actions BFDNeighbors
+netconf-yang cisco-odm actions BridgeDomain
+netconf-yang cisco-odm actions CPUProcesses
+netconf-yang cisco-odm actions LLDPNeighbors
+netconf-yang cisco-odm actions VirtualService
+netconf-yang cisco-odm actions MemoryProcesses
+netconf-yang cisco-odm actions EthernetCFMStats
+netconf-yang cisco-odm actions MPLSLDPNeighbors
+netconf-yang cisco-odm actions PlatformSoftware
+netconf-yang cisco-odm actions MPLSStaticBinding
+netconf-yang cisco-odm actions MPLSForwardingTable
+netconf-yang
+!
+!
+username admin privilege 15 secret 5 $1$s9CI$rUYxnU4RGMvkuHMKi1YPc0
+username cisco privilege 15 secret 5 $1$hTtI$aXNAZTf5iAZVkSzQb51e.0
+username admin2 privilege 15
+username netconf privilege 15 password 0 netconf
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback1001
+ ip address 11.1.1.11 255.255.255.0
+!
+interface Loopback1003
+ ip address 3.1.1.1 255.255.255.0
+!
+interface GigabitEthernet1
+ ip address 192.168.1.149 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+ip http server
+ip http secure-server
+!
+ip ssh pubkey-chain
+  username admin2
+   key-hash ssh-rsa 1F7C9D543BB9B13F53492C758F668F60 benz@entauto
+ip scp server enable
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ transport input ssh
+!
+!
+!
+!
+!
+!
+end

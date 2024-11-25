@@ -2,9 +2,9 @@ from netmiko import ConnectHandler, file_transfer, progress_bar
 
 csr = {
     'device_type': 'cisco_ios',
-    'host': '192.168.0.63',
-    'username': 'admin',
-    'password': 'admin'
+    'host': '192.168.1.149',
+    'username': 'cisco',
+    'password': 'cisco'
 }
 
 net_connect = ConnectHandler(**csr)

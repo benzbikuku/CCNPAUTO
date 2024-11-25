@@ -3,14 +3,14 @@ from netmiko import Netmiko
 ## Netmiko
 csr = {
     'device_type': 'cisco_ios',
-    'host':   '192.168.0.63',
-    'username': 'admin',
-    'password': 'admin'
+    'host':   '192.168.1.95',
+    'username': 'cisco',
+    'password': 'cisco'
 }
 
 net_connect = Netmiko(**csr)
 print("Connected successfully")
-print(dir(net_connect))
+# print(dir(net_connect))
 # sh_output = net_connect.send_command("show run")
 # print(sh_output)
 print(net_connect.find_prompt())

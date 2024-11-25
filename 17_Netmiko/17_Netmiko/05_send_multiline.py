@@ -2,16 +2,17 @@ from netmiko import ConnectHandler
 
 csr = {
     'device_type': 'cisco_ios',
-    'host': '192.168.0.63',
-    'username': 'admin',
-    'password': 'admin'
+    'host': '192.168.1.149',
+    'username': 'cisco',
+    'password': 'cisco'
 }
-copy_cmd = "copy bootflash:csr1000v-mono-universalk9.17.03.03.SPA.pkg bootflash:new.pkg"
-copy_cmd_e = r"Destination filename"
+copy_cmd = "copy  csr1000v-mono-universalk9.16.04.01.SPA.pkg bootflash:new.pkg"
+# copy_cmd_e = r"Destination filename"
 
-cmd_list = [[copy_cmd, copy_cmd_e],
-            ['\n', "Do you want to over write"],
-            ['\n', r'#']]
+cmd_list = [[copy_cmd, r".+#"]] 
+            # copy_cmd_e],
+            # ['\n', "Do you want to over write"],
+            # ['\n', r'#']]
 
 net_connect = ConnectHandler(**csr)
 print("Connected successfully")

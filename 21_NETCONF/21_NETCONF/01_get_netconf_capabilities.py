@@ -15,6 +15,7 @@
 # print(rtr_mgr.connected)
 
 ##########################
+
 """get schema"""
 
 from ncclient import manager
